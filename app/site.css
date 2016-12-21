@@ -1,0 +1,19 @@
+.tab-content {
+    padding-top: 20px;
+}
+
+.user-panel {
+    margin-bottom: 0px;
+}
+
+.user-pagination {
+    margin-top: 0px;
+}
+
+.user-button-group {
+    margin-bottom: 0px;
+}
+
+.user-button-group > div > button {
+    margin: 5px;
+}

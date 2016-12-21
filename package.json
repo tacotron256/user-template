@@ -1,0 +1,40 @@
+{
+  "name": "user-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "browser-sync": "^2.18.5",
+    "express": "^4.14.0",
+    "git": "^0.1.5",
+    "gulp-nodemon": "^2.2.1",
+    "gulp": "^3.9.1"
+  },
+  "optionalDependencies": {
+    "fsevents": "*"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.5",
+    "gulp-nodemon": "^2.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "jspm": {
+    "directories": {
+      "baseURL": "app"
+    },
+    "dependencies": {
+      "aurelia-bootstrapper": "npm:aurelia-bootstrapper@^2.0.1",
+      "aurelia-framework": "npm:aurelia-framework@^1.0.8",
+      "aurelia-pal-browser": "npm:aurelia-pal-browser@^1.1.0"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  }
+}
