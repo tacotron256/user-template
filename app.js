@@ -6,7 +6,7 @@ var app = express();
 app.use(express.static('app'));
 
 app.get('/', function(req, res) {
-    res.sendfile('./app/test.html');
+    res.sendfile('index.html');
 });
 
-app.listen(5001);
+app.listen(8081);

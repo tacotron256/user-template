@@ -17,3 +17,16 @@
 .user-button-group > div > button {
     margin: 5px;
 }
+
+.table-header {
+    margin-bottom: 0px;
+}
+
+.table-header > thead > tr > th {
+    border: 1px solid #dddddd;
+    border-top: 1px solid #dddddd !important;
+}
+
+.user-listing-search {
+    margin-bottom: 10px;
+}

@@ -1,41 +1,22 @@
 
-// app/app.js
+// app.js
 export class App {
   constructor() {
-
-    this.users = [
-      {
-        firstName: 'Bob',
-        lastName: 'Baumgardner',
-        email: 'sbaumgardner27@gmail.com',
-        id: '1234567890'
-      },
-      {
-        firstName: 'James',
-        lastName: 'Jamerson',
-        email: 'jjamerson@gmail.com',
-        id: '1234567890'
-      },
-      {
-        firstName: 'Robert',
-        lastName: 'Robertson',
-        email: 'rrobertson@gmail.com',
-        id: '1234567890'
-      },
-      {
-        firstName: 'Steven',
-        lastName: 'Stevenson',
-        email: 'sstevenson@gmail.com',
-        id: '1234567890'
-      },
-      {
-        firstName: 'Matt',
-        lastName: 'Matherson',
-        email: 'mmatherson@gmail.com',
-        id: '1234567890'
-      }
-    ]
-
-
+      console.log('constructor');
+  }
+  configureRouter (config, router) {
+      console.log('configuring router');
+    this.router = router;
+    config.title = "Home";
+    config.map([
+      {route: '', name: 'home', moduleId: 'home/home', nav: true, title: 'Home'},
+      {route: 'home', name: 'home', moduleId: 'home/home', nav: true, title: 'Home'},
+      {route: 'configuration', name: 'configuration', moduleId: 'configuration/configuration', nav: true, title: 'Configuration'},
+      {route: 'publishing', name: 'publishing', moduleId: 'publishing/publishing', nav: true, title: 'Publishing'},
+      {route: 'reports', name: 'reports', moduleId: 'reports/reports', nav: true, title: 'Reports'},
+      {route: 'safety', name: 'safety', moduleId: 'safety/safety', nav: true, title: 'Safety'},
+      {route: 'security', name: 'security', moduleId: 'security/security', nav: true, title: 'Security'},
+      {route: 'configuration', name: 'configuration', moduleId: 'configuration/configuration', nav: true, title: 'Configuration'}
+    ]);
   }
 }

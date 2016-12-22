@@ -184,5 +184,14 @@
   "npm:aurelia-history@1.0.0": {},
   "npm:aurelia-route-recognizer@1.1.0": {
     "aurelia-path": "npm:aurelia-path@^1.0.0"
-  }
+  },
+  "npm:jquery@3.1.1": {},
+  "github:twbs/bootstrap@3.3.7": {
+    "jquery": "jspm:jquery"
+  },
+  "npm:bootswatch@3.3.7": {},
+  "npm:font-awesome@4.7.0": {
+    "css": "jspm:css@0.1"
+  },
+  "github:systemjs/plugin-css@0.1.32": {}
 }

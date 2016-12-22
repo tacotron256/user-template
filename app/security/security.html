@@ -1,0 +1,16 @@
+<template>
+  <div class="container-fluid">
+    <div class="bs-component">
+      <div class="row">
+        <ul class="nav nav-tabs col-xs-10 col-xs-offset-1">
+          <li class="active"><a href="#/security/users">Users</a></li>
+          <li class="inactive"><a href="#/security/roles">Roles</a></li>
+          <li class="inactive"><a href="#/security/permissions">Permissions</a></li>
+        </ul>
+      </div>
+      <div id="myTabContent" class="tab-content">
+        <router-view></router-view>
+      </div>
+    </div>
+  </div>
+</template>
