@@ -4,9 +4,7 @@ export class Users {
 
   activate(params, routeconfig) {
     //pass in permission template from router (parent controller)
-    // console.log(this);
     this.permissionsTemplate = routeconfig.permissionsTemplate || null;
-    console.log(this.permissionsTemplate);
   }
   constructor() {
 
@@ -18,12 +16,7 @@ export class Users {
         DODID: '1234567890',
         role: 'User',
         isActive: false,
-        permissions: [
-          {
-            permissionID: 1,
-            permissionValue: true
-          }
-        ]
+        userPermissions: []
       },
       {
         firstName: 'James',
@@ -31,7 +24,8 @@ export class Users {
         email: 'jjamerson@gmail.com',
         DODID: '1234567890',
         role: 'Administrator',
-        isActive: true
+        isActive: true,
+        userPermissions: []
       },
       {
         firstName: 'Robert',
@@ -39,7 +33,8 @@ export class Users {
         email: 'rrobertson@gmail.com',
         DODID: '1234567890',
         role: 'User',
-        isActive: false
+        isActive: false,
+        userPermissions: []
       },
       {
         firstName: 'Steven',
@@ -47,7 +42,8 @@ export class Users {
         email: 'sstevenson@gmail.com',
         DODID: '1234567890',
         role: 'User Administrator',
-        isActive: true
+        isActive: true,
+        userPermissions: []
       },
       {
         firstName: 'Matt',
@@ -55,7 +51,8 @@ export class Users {
         email: 'mmatherson@gmail.com',
         DODID: '1234567890',
         role: 'User',
-        isActive: false
+        isActive: false,
+        userPermissions: []
       },
       {
         firstName: 'Matt',
@@ -63,7 +60,8 @@ export class Users {
         email: 'mmatherson@gmail.com',
         DODID: '1234567890',
         role: 'User',
-        isActive: false
+        isActive: false,
+        userPermissions: []
       },
       {
         firstName: 'Matt',
@@ -71,7 +69,8 @@ export class Users {
         email: 'mmatherson@gmail.com',
         DODID: '1234567890',
         role: 'User',
-        isActive: false
+        isActive: false,
+        userPermissions: []
       },
       {
         firstName: 'Matt',
@@ -79,13 +78,20 @@ export class Users {
         email: 'mmatherson@gmail.com',
         DODID: '1234567890',
         role: 'User',
-        isActive: false
+        isActive: false,
+        userPermissions: []
       }
     ];
 
   }
 
-  selectUser(user){
+  selectUser(user) {
+    //if user has no associated permissions list
+    if (user.userPermissions.length === 0) {
+      //Make a call to the database to get user permissions template. for now we will use the default template. make a deep copy
+      user.userPermissions = $.extend(true, [], this.permissionsTemplate);
+    }
+    //set selected user
     this.selectedUser = user;
   }
 }

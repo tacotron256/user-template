@@ -1,0 +1,4 @@
+export class Warning {
+  constructor() {
+  }
+}

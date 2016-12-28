@@ -1,3 +1,8 @@
+body {
+    min-width: 490px;
+}
+
+
 .tab-content {
     padding-top: 20px;
 }
@@ -22,7 +27,7 @@
     margin-bottom: 0px;
 }
 
-.table-header > thead > tr > th {
+.table-header > tr > th {
     border: 1px solid #dddddd;
     border-top: 1px solid #dddddd !important;
 }

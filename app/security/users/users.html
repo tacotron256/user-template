@@ -1,15 +1,14 @@
 <template>
-    <!--<div style="width: 500px; height: 500px; background-color: gray">${permissionsTemplate}</div>-->
     <div class="row">
-        <div class="col-xs-6 col-xs-offset-1">
+        <div class="col-sm-offset-0 col-sm-8 col-md-offset-1 col-md-6">
             <div class="pull-left">
                 <h4>User Listing</h4>
             </div>
             <div class="pull-right user-listing-search">
                 <input type="text" class="text form-control" placeholder="Search">
             </div>
-            <table class="table table-hover table-header">
-                <thead>
+            <table class="table table-striped table-hover">
+                <thead class="table-header">
                     <tr>
                         <th>First Name</th>
                         <th>Last Name</th>
@@ -17,10 +16,8 @@
                         <th>ID</th>
                     </tr>
                 </thead>
-            </table>
-            <table class="table table-striped table-hover">
                 <tbody>
-                    <tr repeat.for="user of users" click.delegate="selectUser(user)">
+                    <tr repeat.for="user of users" click.delegate="selectUser(user)" style.bind="selectedUser == user ? 'background: #cec5c5' : ''">
                         <td>${user.firstName}</td>
                         <td>${user.lastName}</td>
                         <td>${user.email}</td>
@@ -28,6 +25,7 @@
                     </tr>
                 </tbody>
             </table>
+            <button type="submit" class="btn btn-primary pull-left">New User</button>
             <ul class="pagination user-pagination pull-right">
                 <li class="disabled"><a href="#">«</a></li>
                 <li class="active"><a href="#">1</a></li>
@@ -37,67 +35,65 @@
                 <li><a href="#">5</a></li>
                 <li><a href="#">»</a></li>
             </ul>
+            <div class="clearfix"></div>
         </div>
-        <div class="col-xs-4">
+        <div class="col-sm-offset-0 col-sm-4 col-md-offset-0 col-md-4">
             <div class="well bs-component">
                 <form class="form-horizontal">
-                    <fieldset>
-                        <legend>User Details</legend>
-                        <div class="form-group">
-                            <label for="inputFName" class="col-lg-3 control-label">First Name</label>
-                            <div class="col-lg-9">
-                                <input type="text" class="form-control" id="inputFName" placeholder="First Name" value.bind="selectedUser.firstName">
-                            </div>
+                    <legend>User Details</legend>
+                    <div class="form-group">
+                        <label for="inputFName" class="col-lg-3 control-label">First Name</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control" id="inputFName" placeholder="First Name" value.bind="selectedUser.firstName">
                         </div>
-                        <div class="form-group">
-                            <label for="inputLName" class="col-lg-3 control-label">Last Name</label>
-                            <div class="col-lg-9">
-                                <input type="text" class="form-control" id="inputLName" placeholder="Last Name" value.bind="selectedUser.lastName">
-                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputLName" class="col-lg-3 control-label">Last Name</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control" id="inputLName" placeholder="Last Name" value.bind="selectedUser.lastName">
                         </div>
-                        <div class="form-group">
-                            <label for="inputEmail" class="col-lg-3 control-label">Email</label>
-                            <div class="col-lg-9">
-                                <input type="text" class="form-control" id="inputEmail" placeholder="Email" value.bind="selectedUser.email">
-                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-lg-3 control-label">Email</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control" id="inputEmail" placeholder="Email" value.bind="selectedUser.email">
                         </div>
-                        <div class="form-group">
-                            <label for="inputDODID" class="col-lg-3 control-label">DOD ID</label>
-                            <div class="col-lg-9">
-                                <input type="text" class="form-control" id="inputDODID" placeholder="DOD ID" value.bind="selectedUser.DODID">
-                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputDODID" class="col-lg-3 control-label">DOD ID</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control" id="inputDODID" placeholder="DOD ID" value.bind="selectedUser.DODID">
                         </div>
-                        <div class="form-group">
-                            <label for="select" class="col-lg-3 control-label">Role</label>
-                            <div class="col-lg-9">
-                                <select class="form-control" id="select" value.bind="selectedUser.role">
+                    </div>
+                    <div class="form-group">
+                        <label for="select" class="col-lg-3 control-label">Role</label>
+                        <div class="col-lg-9">
+                            <select class="form-control" id="select" value.bind="selectedUser.role">
                         <option>User</option>
                         <option>Administrator</option>
                         <option>User Administrator</option>
                         <option>Security Administrator</option>
                         <option>Report Administrator</option>
                       </select>
-                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="select" class="col-lg-3 control-label">Active</label>
-                            <div class="col-lg-9">
-                                <div class="checkbox">
-                                    <label>
+                    </div>
+                    <div class="form-group">
+                        <label for="select" class="col-lg-3 control-label">Active</label>
+                        <div class="col-lg-9">
+                            <div class="checkbox">
+                                <label>
                           <input type="checkbox"checked.bind="selectedUser.isActive"> Active
                         </label>
-                                </div>
                             </div>
                         </div>
-                        <div class="form-group user-button-group">
-                            <div class="col-xs-12">
-                                <button type="submit" class="btn btn-primary pull-left">New</button>
-                                <button type="submit" class="btn btn-warning pull-left">Delete</button>
-                                <button type="submit" class="btn btn-primary pull-right">Update</button>
-                                <button type="reset" class="btn btn-default pull-right">Cancel</button>
-                            </div>
+                    </div>
+                    <div class="form-group user-button-group">
+                        <div class="col-xs-12">
+                            <button type="submit" class="btn btn-danger pull-left">Delete</button>
+                            <button type="submit" class="btn btn-primary pull-right">Update</button>
+                            <button type="reset" class="btn btn-default pull-right">Cancel</button>
                         </div>
-                    </fieldset>
+                    </div>
                 </form>
             </div>
         </div>
@@ -105,18 +101,18 @@
     <div class="row">
         <div class="col-xs-offset-1 col-xs-10">
             <ul class="nav nav-tabs">
-                <li class="${$index == 0 ? 'active' : 'inactive'}" repeat.for="perm of permissionsTemplate">
+                <li class="${$index == 0 ? 'active' : 'inactive'}" repeat.for="perm of selectedUser.userPermissions">
                     <a data-target="#${perm.permissionsType}" target="_parent" data-toggle="tab">${perm.permissionsType}</a>
                 </li>
             </ul>
             <div id="myTabContent" class="tab-content">
-                <div repeat.for="perm of permissionsTemplate" class="tab-pane ${$index == 0 ? 'active' : 'inactive'} fade in" id="${perm.permissionsType}">
+                <div repeat.for="perm of selectedUser.userPermissions" class="tab-pane ${$index == 0 ? 'active' : 'inactive'} fade in" id="${perm.permissionsType}">
                     <table class="table table-hover">
                         <tbody>
                             <div repeat.for="p of perm.permissions">
                                 <div class="checkbox">
                                     <label>
-                          <input type="checkbox"> ${p.permissionLabel}
+                          <input type="checkbox" checked.bind="p.permissionValue"> ${p.permissionLabel}
                         </label>
                                 </div>
                             </div>
