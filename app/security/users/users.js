@@ -1,3 +1,4 @@
+
 export class Users {
   permissionsTemplate;
   selectedUser;
@@ -7,6 +8,7 @@ export class Users {
     this.permissionsTemplate = routeconfig.permissionsTemplate || null;
   }
   constructor() {
+
 
     this.users = [
       {
@@ -85,7 +87,12 @@ export class Users {
 
   }
 
+  addNewUser() {
+
+  }
+
   selectUser(user) {
+
     //if user has no associated permissions list
     if (user.userPermissions.length === 0) {
       //Make a call to the database to get user permissions template. for now we will use the default template. make a deep copy

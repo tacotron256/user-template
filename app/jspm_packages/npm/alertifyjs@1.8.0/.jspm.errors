@@ -1,0 +1,11 @@
+MultipleErrors: C:/Users/BOB/AppData/Local/.jspm/packages/npm/alertifyjs@1.8.0/src/js/dialog/dialog.js:2:9: Illegal return statement
+
+MultipleErrors: C:/Users/BOB/AppData/Local/.jspm/packages/npm/alertifyjs@1.8.0/src/js/dialog/outro.js:1:2: Unexpected token }
+
+MultipleErrors: C:/Users/BOB/AppData/Local/.jspm/packages/npm/alertifyjs@1.8.0/src/js/dialog/intro.js:610:1: Unexpected token End of File
+C:/Users/BOB/AppData/Local/.jspm/packages/npm/alertifyjs@1.8.0/src/js/dialog/intro.js:610:1: Unexpected token End of File
+
+MultipleErrors: C:/Users/BOB/AppData/Local/.jspm/packages/npm/alertifyjs@1.8.0/src/js/intro.js:194:1: Unexpected token End of File
+C:/Users/BOB/AppData/Local/.jspm/packages/npm/alertifyjs@1.8.0/src/js/intro.js:194:1: Unexpected token End of File
+
+MultipleErrors: C:/Users/BOB/AppData/Local/.jspm/packages/npm/alertifyjs@1.8.0/src/js/outro.js:14:1: Unexpected token }
